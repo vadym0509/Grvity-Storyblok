@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function fetchStory() {
+      // Replace this with the path to your content item in Storyblok
+      const path = 'home';
+  
+      fetch(`https://api.storyblok.com/v2/cdn/stories/${path}?version=published&token=dfrcx5heCI97qlA3HM0X9gtt`)
+        .then(response => response.json())
+        .then(data => {
+          const content = data.story.content;
+          const label = content.body[0].label;
+
+          document.getElementById('button').innerHTML = label;
+        });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      fetchStory();
+    });
+  </script>
+</head>
+<body>
+  <button id="button" class="px-8 py-2 bg-blue-600 hover:bg-blue-700 rounded-full text-white font-bold"></button>
+</body>
+</html>

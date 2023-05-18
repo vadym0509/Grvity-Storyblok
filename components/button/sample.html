@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Example Page</title>
+  <script>
+    function fetchStory() {
+      // Replace this with the path to your content item in Storyblok
+      const path = 'home';
+  
+      fetch(`https://api.storyblok.com/v1/cdn/stories/${path}?version=published&token=NcE3kHQIv4UEv5rrQLlt1gtt`)
+        .then(response => response.json())
+        .then(data => {
+          const content = data.story.content;
+          const title = content.component;
+          const body = content.body[0].headline;
+
+          document.getElementById('title').innerHTML = title;
+          document.getElementById('body').innerHTML = body;
+        });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      fetchStory();
+    });
+  </script>
+</head>
+<body>
+  <h1 id="title"></h1>
+  <div id="body"></div>
+</body>
+</html>
