@@ -4,35 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    function fetchStory() {
+  <script src="../../components/hero-section/hero-section.js"></script>
+  <script src="../../components/button/button.js"></script>
+  <script src="../../components/hero-section/header-nav/header-nav.js"></script>
+  <script src="../../components/section-with-screenshot/section-with-screenshot.js"></script>
+  <script> 
+    function getHtmlContent(story){
+      var htmlContent = '<div class="ml-8 lg:max-xl:ml-28 lg:max-2xl:ml-60 lg:ml-96">';
+      htmlContent += getHeroSection(story[0]);
+      htmlContent += '</div>';
+      return htmlContent
+    }
+
+    function render() {
       // Replace this with the path to your content item in Storyblok
       const path = 'home';
   
       fetch(`https://api.storyblok.com/v2/cdn/stories/${path}?version=published&token=dfrcx5heCI97qlA3HM0X9gtt`)
         .then(response => response.json())
         .then(data => {
-          const body = data.story.content.body[0];
-
-          // document.getElementById('title').innerHTML = title;
-          // document.getElementById('body').innerHTML = body;
+          const story = data.story.content.body;
+          const htmlContent = getHtmlContent(story);
+          document.getElementById("root").innerHTML = htmlContent;
         });
     }
 
     window.addEventListener('DOMContentLoaded', () => {
-      fetchStory();
+      render();
     });
   </script>
 </head>
 <body class="font-['Segoe UI']">
-  <div class="ml-8 lg:max-xl:ml-28 lg:max-2xl:ml-60 lg:ml-96">
+  <!-- <div class="ml-8 lg:max-xl:ml-28 lg:max-2xl:ml-60 lg:ml-96">
     <div id="hero-section" class="block pl-7">
       <div class="absolute overflow-hidden inset-0" style="z-index: -1;">
         <div class="h-[55rem] w-screen bg-gradient-to-r from-red-500 to-blue-500 transform -rotate-[10deg] scale-x-150 -translate-y-2/4"></div>
       </div>
       <div class="flex justify-start">
         <div id="header" class="flex h-10 mt-8">
-          <img src="../public/logo.png" alt="logo" class="object-none w-48 mr-80">
+          <img src="../../public/logo.png" alt="logo" class="object-none w-48 mr-80">
           <div id="right-container" class="flex items-center justify-between ml-auto">
             <div id="menu-container" class="flex justify-between m-auto text-white">
               <div id="menu-item-1" class="mx-3">Product</div>
@@ -57,11 +67,11 @@
           </div>
         </div>
         <div id="hero-section-screenshot-container">
-          <img src="../public/screenshot_1.png" alt="screenshot_1">
+          <img src="../../public/screenshot_1.png" alt="screenshot_1">
         </div>
       </div>
     </div>
-    <div id="first-section" class="mt-56">
+    <div id="first-section" class="mt-56 pl-7">
       <div class="max-w-[500px] w-4/5">
         <div id="first-section-headline-container" class="font-bold text-[38px] leading-tight text-[#2B2B2B]">Data Collection</div>
         <div id="first-section-subheadline-container" class="mt-6 text-lg leading-7 text-gray-700">GRVITY connects to your systems such as ERP, onlineshop and product database and merges the data, so that you are able to track every touchpoint and interaction of your clients with your company.</div>
@@ -75,6 +85,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+  <div id="root"></div>
 </body>
 </html>
