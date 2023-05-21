@@ -6,12 +6,14 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="../../components/hero-section/hero-section.js"></script>
   <script src="../../components/button/button.js"></script>
-  <script src="../../components/hero-section/header-nav/header-nav.js"></script>
+  <script src="../../components/header-nav/header-nav.js"></script>
   <script src="../../components/section-with-screenshot/section-with-screenshot.js"></script>
   <script> 
-    function getHtmlContent(story){
-      var htmlContent = '<div class="ml-8 lg:max-xl:ml-28 lg:max-2xl:ml-60 lg:ml-96">';
-      htmlContent += getHeroSection(story[0]);
+    function getHtmlContent(body){
+      var htmlContent = '<div class="ml-8 xl:ml-28 2xl:ml-60">';
+      // var htmlContent = '<div class="flex md:justify-end min-[1921px]:justify-center"><div>';
+      htmlContent += getHeaderNav(body[0]);
+      htmlContent += getHeroSection(body[1]);
       htmlContent += '</div>';
       return htmlContent
     }
@@ -23,8 +25,8 @@
       fetch(`https://api.storyblok.com/v2/cdn/stories/${path}?version=published&token=dfrcx5heCI97qlA3HM0X9gtt`)
         .then(response => response.json())
         .then(data => {
-          const story = data.story.content.body;
-          const htmlContent = getHtmlContent(story);
+          const body = data.story.content.body;
+          const htmlContent = getHtmlContent(body);
           document.getElementById("root").innerHTML = htmlContent;
         });
     }
