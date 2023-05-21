@@ -1,6 +1,6 @@
 function getHeaderNav(block){
-    var content = `<div class="flex mr-8">\
-                        <div class="flex h-10 mt-8 justify-between min-[1920px]:justify-center w-full xl:w-10/12"><div class="my-auto ml-0 min-[1920px]:mr-80">\
+    var content = `<div class="flex mx-8 md:mx-0">\
+                        <div class="flex h-10 mt-8 w-full xl:w-10/12"><div class="my-auto ml-0 mr-auto">\
                             <img src=${block.logo.filename} alt="logo" class="object-none w-48">\
                         </div>\
                         <div class="flex">\

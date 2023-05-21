@@ -1,7 +1,7 @@
 function getSectionWithScreenshot(block){
-    var content = `<div id="section-with-screenshot" class="block md:flex md:justify-between min-[1920px]:justify-center mt-24">\
-                        <div class="my-auto mr-8 md:mx-0 md:w-[340px] lg:w-[456px] xl:w-[574px]">\
-                            <div class="font-bold text-[48px] xl:text-[80px] leading-none text-[#2B2B2B]">${block.headline}</div>\
+    var content = `<div id="section-with-screenshot" class="block md:flex mt-16 md:mt-24">\
+                        <div class="my-auto mx-8 md:mx-0 md:w-[340px] lg:w-[456px] xl:w-[574px]">\
+                            <div class="font-bold text-5xl xl:text-[80px] leading-none text-[#2B2B2B]">${block.headline}</div>\
                             <div class="mt-6 text-lg text-gray-700">${block.content}</div>\
                             <div class="mt-6 xl:mt-12">`
     content += getButton(block.buttons[0]);
