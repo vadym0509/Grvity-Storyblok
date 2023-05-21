@@ -8,13 +8,13 @@
   <script src="../../components/button/button.js"></script>
   <script src="../../components/header-nav/header-nav.js"></script>
   <script src="../../components/section-with-screenshot/section-with-screenshot.js"></script>
+  <script src="../../components/first-section/first-section.js"></script>
+  <script src="../../components/section-container/section-container.js"></script>
   <script> 
     function getHtmlContent(body){
-      // var htmlContent = '<div class="ml-8 xl:ml-28 2xl:ml-60">';
-      var htmlContent = '<div class="flex md:justify-end min-[1921px]:justify-center"><div>';
-      htmlContent += getHeaderNav(body[0]);
-      htmlContent += getHeroSection(body[1]);
-      htmlContent += '</div></div>';
+      var htmlContent = '<div class="flex justify-center">';
+      htmlContent += getSectionContainer(body)
+      htmlContent += '</div>';
       return htmlContent
     }
 
@@ -73,20 +73,7 @@
         </div>
       </div>
     </div>
-    <div id="first-section" class="mt-56 pl-7">
-      <div class="max-w-[500px] w-4/5">
-        <div id="first-section-headline-container" class="font-bold text-[38px] leading-tight text-[#2B2B2B]">Data Collection</div>
-        <div id="first-section-subheadline-container" class="mt-6 text-lg leading-7 text-gray-700">GRVITY connects to your systems such as ERP, onlineshop and product database and merges the data, so that you are able to track every touchpoint and interaction of your clients with your company.</div>
-        <div id="first-section-labels-container">
-          <div id=""></div>
-        </div>
-        <div id="first-section-button-container" class="mt-6">
-          <button class="px-6 py-2 font-bold text-white rounded-full bg-blue-500 hover:bg-opacity-80">
-            Learn More
-          </button>
-        </div>
-      </div>
-    </div>
+
   </div> -->
   <div id="root"></div>
 </body>
