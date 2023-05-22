@@ -13,7 +13,7 @@ function getSection(block, isShowShadow){
     content += getButton(block.blocks[3]);
                 content += `</div>\
                         </div>\
-                        <div class="my-auto ${block.full_width === 'boxed' ? 'mt-0' : 'mt-6'}"><img class="${isShowShadow ? 'drop-shadow-xl' : ''}" src=${block.cover.filename} alt=${block.cover.alt}></div>\
+                        <div class="${block.full_width === 'boxed' ? 'mt-6 md:my-auto' : 'mt-6'}"><img class="${isShowShadow ? 'drop-shadow-xl' : 'w-full'}" src=${block.cover.filename} alt=${block.cover.alt}></div>\
                     </div>`;           
     return content;
 }
