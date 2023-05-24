@@ -11,9 +11,11 @@
   <script src="../../components/section/section.js"></script>
   <script src="../../components/section-container/section-container.js"></script>
   <script src="../../components/label/getLabel.js"></script>
-  <script> 
+  <script src="../../components/utils/parallex-effect.js"></script>
+  <script>
     function getHtmlContent(body){
-      var htmlContent = '<div class="flex justify-center">';
+      var htmlContent = '<div class="absolute font-bold text-[250px] text-[#DEE5FF] -rotate-90 -left-1/4 top-[1550px]">Understand</div>\
+      <div class="flex justify-center">';
       htmlContent += getSectionContainer(body)
       htmlContent += '</div>';
       return htmlContent
@@ -38,44 +40,6 @@
   </script>
 </head>
 <body class="font-['Segoe UI']">
-  <!-- <div class="ml-8 lg:max-xl:ml-28 lg:max-2xl:ml-60 lg:ml-96">
-    <div id="hero-section" class="block pl-7">
-      <div class="absolute overflow-hidden inset-0" style="z-index: -1;">
-        <div class="h-[55rem] w-screen bg-gradient-to-r from-red-500 to-blue-500 transform -rotate-[10deg] scale-x-150 -translate-y-2/4"></div>
-      </div>
-      <div class="flex justify-start">
-        <div id="header" class="flex h-10 mt-8">
-          <img src="../../public/logo.png" alt="logo" class="object-none w-48 mr-80">
-          <div id="right-container" class="flex items-center justify-between ml-auto">
-            <div id="menu-container" class="flex justify-between m-auto text-white">
-              <div id="menu-item-1" class="mx-3">Product</div>
-              <div id="menu-item-2" class="mx-3">Module</div>
-              <div id="menu-item-3" class="mx-3">Plans</div>
-              <div id="menu-item-4" class="mx-3">Success Stories</div>
-            </div>
-            <button id="book-demo-btn-container" class="px-6 py-2 ml-14 font-bold text-white rounded-full bg-white bg-opacity-20 hover:bg-opacity-30">
-              Book a Demo
-            </button>
-          </div>
-        </div>
-      </div>
-      <div id="section-with-screenshot" class="flex justify-end mt-24">
-        <div class="max-w-[574px] w-4/5 mt-20">
-          <div id="hero-section-headline-container" class="font-bold text-[80px] leading-none text-[#2B2B2B]">How to understand your clients</div>
-          <div id="hero-section-subheadline-container" class="mt-6 text-lg leading-7 text-gray-700">GRVITY bundles customer data, touchpoints and product information for a 360° view of your customers. <br> Create your own bonus program, create personalized omnichannel marketing campaigns and extend your customer life cycle.</div>
-          <div id="hero-section-button-container" class="mt-12">
-            <button class="px-6 py-2 font-bold text-white rounded-full bg-blue-500 hover:bg-opacity-80">
-              Learn More
-            </button>
-          </div>
-        </div>
-        <div id="hero-section-screenshot-container">
-          <img src="../../public/screenshot_1.png" alt="screenshot_1">
-        </div>
-      </div>
-    </div>
-
-  </div> -->
   <div id="root"></div>
 </body>
 </html>
