@@ -1,7 +1,5 @@
 function getSectionContainer(body){
     document.addEventListener("scroll", function(e){
-        console.log(window.scrollY);
-        console.log("window height")
         setScrollSpeed("01", 0);
         setScrollSpeed("02", 540);
         setScrollSpeed("03", 1680);
