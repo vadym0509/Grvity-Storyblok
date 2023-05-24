@@ -12,12 +12,14 @@
   <script src="../../components/section-container/section-container.js"></script>
   <script src="../../components/label/getLabel.js"></script>
   <script src="../../components/utils/parallex-effect.js"></script>
+  <script src="../../components/footer/footer.js"></script>
   <script>
     function getHtmlContent(body){
-      var htmlContent = '<div class="absolute font-bold text-[250px] text-[#DEE5FF] -rotate-90 -left-1/4 top-[1550px]">Understand</div>\
+      var htmlContent = '<div class="absolute hidden font-bold text-[250px] text-[#DEE5FF] -rotate-90 -left-1/4 top-[1550px]">Understand</div>\
       <div class="flex justify-center">';
       htmlContent += getSectionContainer(body)
       htmlContent += '</div>';
+      htmlContent += getFooter(body[8]);
       return htmlContent
     }
 
