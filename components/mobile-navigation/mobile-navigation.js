@@ -16,7 +16,7 @@ function getMobileNavigation(body) {
                     content += `<div id="mobile-nav-links-container-${index}" class="hidden flex flex-col p-4 gap-y-4 bg-[#F6F9FC] rounded-b-[10px]"><hr>`;
                     item.links.map(function(link, index){
                         content += `<div>
-                                        <div class="font-semibold text-lg text-[#323B4B]">${link.text}</div>
+                                        <div class="font-semibold cursor-pointer text-lg text-[#323B4B]">${link.text}</div>
                                         <div class="text-sm text-[#8A94A6]">${link.description}</div>
                                     </div>`;
                     })
