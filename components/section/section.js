@@ -1,5 +1,5 @@
 function getSection(block, isShowShadow, indicatorNum){
-    var content = `<div id="section-indicator-container-${indicatorNum}" class="relative w-fit top-[240px] z-[-1] font-bold text-[120px] md:text-[200px] leading-[180px] text-[#5B7FFF]" style="box-shadow:black 10px 150px 30px -20px, black 0px -35px 40px -50px inset">${indicatorNum}</div>
+    var content = `<div id="section-indicator-container-${indicatorNum}" class="relative w-fit top-[240px] z-[-1] font-bold text-[120px] md:text-[200px] leading-[180px] text-[#5B7FFF]" style="box-shadow:black 80px 140px 70px -70px, black 0px -35px 40px -50px inset">${indicatorNum}</div>
                    <div class="mt-16 ${block.full_width === 'boxed' ? 'md:inline-flex' : ''} ">\
                         <div class="w-full bg-white ${block.full_width === 'boxed' ? 'lg:max-w-[500px]' : 'lg:max-w-[692px]'}  mr-8">\
                             <div class="font-bold text-[38px] leading-tight text-[#2B2B2B]">${block.blocks[0].headline}</div>\
