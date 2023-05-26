@@ -14,6 +14,7 @@
   <script src="../../components/utils/parallex-effect.js"></script>
   <script src="../../components/footer/footer.js"></script>
   <script src="../../components/mobile-navigation/mobile-navigation.js"></script>
+  <script src="../../components/utils/addEventListeners.js"></script>
   <script>
     function getHtmlContent(body){
       var htmlContent = '<div class="absolute hidden font-bold text-[250px] text-[#DEE5FF] -rotate-90 -left-1/4 top-[1550px]">Understand</div>\
@@ -35,6 +36,9 @@
           const body = data.story.content.body;
           const htmlContent = getHtmlContent(body);
           document.getElementById("root").innerHTML = htmlContent;
+        })
+        .then(() => {
+          addEventListeners();
         });
     }
 
@@ -44,6 +48,6 @@
   </script>
 </head>
 <body class="font-['Segoe UI']">
-  <div id="root"></div>
+  <div id="root"></div>  
 </body>
 </html>

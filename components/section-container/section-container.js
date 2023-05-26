@@ -1,12 +1,10 @@
 function getSectionContainer(body){
     document.addEventListener("scroll", function(e){
-        console.log(window.scrollY)
         if(window.scrollY > 820){
-            document.getElementById("fixed-header-nav").style.transform = "translateY(0px)";
+            document.getElementById("sticky-header-nav").style.transform = "translateY(0px)";
         }else{
-            document.getElementById("fixed-header-nav").style.transform = "translateY(-90px)";
+            document.getElementById("sticky-header-nav").style.transform = "translateY(-90px)";
         }
-
         setScrollSpeed("01", 0);
         setScrollSpeed("02", 540);
         setScrollSpeed("03", 1600);
@@ -16,7 +14,8 @@ function getSectionContainer(body){
     })
     var content = '<div id="section-container" class="w-full mx-8 md:w-[719px] lg:w-[960px] xl:w-[1048px]">';
     content += getHeaderNav(body[0]);
-    content += getFixedHeaderNav(body[0]);
+    content += getStickyHeaderNav(body[0]);
+    content += getDesktopMenuContent(body[9].items[0]);
     content += getHeroSection(body[1]);
     content += getSection(body[2], true, "01");
     content += getSection(body[3], true, "02");
