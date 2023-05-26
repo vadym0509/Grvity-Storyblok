@@ -1,13 +1,15 @@
 function getSectionContainer(body){
     document.addEventListener("scroll", function(e){
+        console.log(window.scrollY)
         if(window.scrollY > 820){
             document.getElementById("fixed-header-nav").style.transform = "translateY(0px)";
         }else{
             document.getElementById("fixed-header-nav").style.transform = "translateY(-90px)";
         }
+
         setScrollSpeed("01", 0);
         setScrollSpeed("02", 540);
-        setScrollSpeed("03", 1680);
+        setScrollSpeed("03", 1600);
         setScrollSpeed("04", 2300);
         setScrollSpeed("05", 3400);
         setScrollSpeed("06", 4000);
