@@ -6,12 +6,17 @@ function getSectionContainer(body){
         }else{
             document.getElementById("sticky-header-nav").style.transform = "translateY(-90px)";
         }
-        setScrollSpeed("01", -150);
-        setScrollSpeed("02", 400);
-        setScrollSpeed("03", 1600);
-        setScrollSpeed("04", 2200);
-        setScrollSpeed("05", 3400);
-        setScrollSpeed("06", 3900);
+        setIndicatorsSpeed("01", -150);
+        setIndicatorsSpeed("02", 400);
+        setIndicatorsSpeed("03", 1600);
+        setIndicatorsSpeed("04", 2200);
+        setIndicatorsSpeed("05", 3400);
+        setIndicatorsSpeed("06", 3900);
+
+        //set vertical typography speed
+        setVerticalTypoSpeed(1340, 1560, "01");
+        setVerticalTypoSpeed(2200, 3500, "02");
+        setVerticalTypoSpeed(4150, 5100, "03");
     })
     var content = '<div id="section-container" class="w-full mx-8 md:w-[719px] lg:w-[960px] xl:w-[1048px]">';
     content += getHeaderNav(body[0]);

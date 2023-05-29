@@ -1,4 +1,4 @@
-function setScrollSpeed(sectionNumber, deltaScrollY){
+function setIndicatorsSpeed(sectionNumber, deltaScrollY){
     const height = window.innerHeight;
     if(window.innerWidth < 768){
         deltaScrollY = deltaScrollY + 200;
@@ -19,5 +19,18 @@ function setScrollSpeed(sectionNumber, deltaScrollY){
     }
     if(window.scrollY > (460 / 937 * height + deltaScrollY)){
         document.getElementById(`section-indicator-container-${sectionNumber}`).style.top = window.innerWidth > 768 ? "80px" : "75px";
+    }
+}
+
+function setVerticalTypoSpeed(startPos, endPos, typoNum){
+    var speed = 10;
+    if(typoNum === "02") speed = 3;
+    if(typoNum === "03") speed = 5;
+    
+    if(window.scrollY > (endPos - 1560) && (startPos + window.scrollY / speed) < endPos){
+        document.getElementById(`vertical-typography-${typoNum}`).style.top = `${startPos + window.scrollY / speed}px`;
+    }
+    if(window.scrollY > (endPos - 1560) && (startPos + window.scrollY / speed) > endPos){
+        document.getElementById(`vertical-typography-${typoNum}`).style.top = `${endPos}px`;
     }
 }
