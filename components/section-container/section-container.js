@@ -25,6 +25,7 @@ function getHomeSections(body){
 
 function getLoyaltySections(body){
     var content = '';
+    content += getHeaderNav(body[0]);
     return content;
 }
 

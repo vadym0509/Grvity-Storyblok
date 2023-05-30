@@ -20,8 +20,8 @@
       var htmlContent = '<div class="flex justify-center">';
         htmlContent += getSectionContainer(body, false, "loyalty")
         htmlContent += '</div>';
-        htmlContent += getFooter(body[8]);
-        htmlContent += getMobileNavigation(body[9]);
+        // htmlContent += getFooter(body[8]);
+        // htmlContent += getMobileNavigation(body[9]);
       return htmlContent
     }
 
@@ -36,9 +36,6 @@
           const htmlContent = getHtmlContent(body);
           document.getElementById("root").innerHTML = htmlContent;
         })
-        .then(() => {
-          addEventListeners();
-        });
     }
 
     window.addEventListener('DOMContentLoaded', () => {
