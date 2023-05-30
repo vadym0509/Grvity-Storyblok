@@ -22,11 +22,7 @@ function setIndicatorsSpeed(sectionNumber, deltaScrollY){
     }
 }
 
-function setVerticalTypoSpeed(startPos, endPos, typoNum){
-    var speed = 10;
-    if(typoNum === "02") speed = 3;
-    if(typoNum === "03") speed = 5;
-    
+function setVerticalTypoSpeed(startPos, endPos, typoNum, speed){
     if(window.scrollY > (endPos - 1560) && (startPos + window.scrollY / speed) < endPos){
         document.getElementById(`vertical-typography-${typoNum}`).style.top = `${startPos + window.scrollY / speed}px`;
     }
