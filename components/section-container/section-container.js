@@ -1,4 +1,34 @@
-function getSectionContainer(body){
+function getSectionContainer(body, isScrollEvents, storyName){
+    var content = '<div id="section-container" class="w-full mx-8 md:w-[719px] lg:w-[960px] xl:w-[1048px]">';
+        if(storyName === "home") content += getHomeSections(body);
+        if(storyName === "loyalty") content += getLoyaltySections(body);
+    content += '</div>';
+    if(isScrollEvents)
+    addScrollEvents();
+    return content;
+}
+
+function getHomeSections(body){
+    var content = '';
+    content += getHeaderNav(body[0]);
+    content += getStickyHeaderNav(body[0]);
+    content += getDesktopMenuContent(body[9].items[0]);
+    content += getHeroSection(body[1]);
+    content += getSection(body[2], true, "01");
+    content += getSection(body[3], true, "02");
+    content += getSection(body[4], false, "03");
+    content += getSection(body[5], false, "04");
+    content += getSection(body[6], false, "05");
+    content += getSection(body[7], false, "06");
+    return content;
+}
+
+function getLoyaltySections(body){
+    var content = '';
+    return content;
+}
+
+function addScrollEvents(){
     const sectionIndicatorsParams = [
         {
             number: "01",
@@ -177,17 +207,4 @@ function getSectionContainer(body){
             setVerticalTypoSpeed(param.startPos, param.endPos, param.typoNum, param.speed);
         })
     })
-    var content = '<div id="section-container" class="w-full mx-8 md:w-[719px] lg:w-[960px] xl:w-[1048px]">';
-    content += getHeaderNav(body[0]);
-    content += getStickyHeaderNav(body[0]);
-    content += getDesktopMenuContent(body[9].items[0]);
-    content += getHeroSection(body[1]);
-    content += getSection(body[2], true, "01");
-    content += getSection(body[3], true, "02");
-    content += getSection(body[4], false, "03");
-    content += getSection(body[5], false, "04");
-    content += getSection(body[6], false, "05");
-    content += getSection(body[7], false, "06");
-    content += '</div>';
-    return content;
 }
