@@ -1,8 +1,8 @@
 function getHeaderNav(block){
     var content = `<div class="flex justify-between h-10 mt-8 w-full">\
-                        <div class="my-auto cursor-pointer">\
+                        <a href="../home/home.html" class="my-auto cursor-pointer">\
                             <img src=${block.type === "default" ? block.white_logo.filename : block.black_logo.filename} alt="logo" class="object-none">\
-                        </div>\
+                        </a>\
                         <div class="flex">\
                             <div class="flex justify-between my-auto ${block.type === "default" ? "text-white" : "py-2 px-6 text-[#323B4B] rounded-full bg-[#EBECF0]"}">`
     block.nav_items.map(function(item, index){
@@ -23,9 +23,9 @@ function getHeaderNav(block){
 function getStickyHeaderNav(block){
     var content = `<div id="sticky-header-nav" class="fixed transition ease-in-out duration-500 -translate-y-[90px] left-0 z-[1] top-0 flex justify-center bg-white w-full drop-shadow-xl h--xl">
     <div class="flex py-[14px] justify-between mx-8 md:mx-0 w-full md:w-[719px] lg:w-[960px] xl:w-[1048px]">\
-                        <div class="my-auto cursor-pointer">\
+                        <a href="../home/home.html" class="my-auto cursor-pointer">\
                             <img src=${block.black_logo.filename} alt="logo" class="object-none">\
-                        </div>\
+                        </a>\
                         <div class="flex">\
                             <div class="flex justify-between my-auto text-[#323B4B]">`
     block.nav_items.map(function(item, index){

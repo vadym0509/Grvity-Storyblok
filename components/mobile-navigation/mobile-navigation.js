@@ -1,9 +1,9 @@
 function getMobileNavigation(body) {
     var content = `<div id="mobile-nav" class="absolute hidden lg:hidden top-4 right-5 p-4 w-[328px] drop-shadow-2xl rounded-[10px] bg-white z-[1]">
-                        <div class="flex justify-between w-full py-3">
+                        <a href="../home/home.html" class="cursor-pointer flex justify-between w-full py-3">
                             <div class="w-[165px] h-4"><img src="${body.logo.filename}" alt="${body.logo.alt}"></div>
                             <button onclick="handleMobileNavBtnClick()" class="w-4 h-4"><img src="${body.close_icon.filename}" alt="${body.close_icon.alt}"></button>
-                        </div>
+                        </a>
                         <div class="flex flex-col mt-4">`;
             body.items.map(function(item, index){
                 content += `<div id="mobile-nav-accordion-item-${index}" ${item.links.length > 0 ? `onclick="document.getElementById('mobile-nav-links-container-${index}').classList.toggle('hidden');document.getElementById('mobile-nav-accordion-item-${index}').classList.toggle('bg-[#F6F9FC]');document.getElementById('mobile-nav-accordion-down-icon-${index}').classList.toggle('hidden');document.getElementById('mobile-nav-accordion-up-icon-${index}').classList.toggle('hidden');"` : ``}  class="w-full px-4 pt-4 flex justify-between cursor-pointer rounded-t-[10px]">

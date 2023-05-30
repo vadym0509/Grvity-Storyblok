@@ -36,6 +36,9 @@
           const htmlContent = getHtmlContent(body);
           document.getElementById("root").innerHTML = htmlContent;
         })
+        .then(() => {
+          addEventListeners();
+        });
     }
 
     window.addEventListener('DOMContentLoaded', () => {

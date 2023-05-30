@@ -26,6 +26,8 @@ function getHomeSections(body){
 function getLoyaltySections(body){
     var content = '';
     content += getHeaderNav(body[0]);
+    content += getStickyHeaderNav(body[0]);
+    content += getDesktopMenuContent(body[1].items[0]);
     return content;
 }
 
