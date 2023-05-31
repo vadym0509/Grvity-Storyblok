@@ -3,8 +3,11 @@ function getSectionContainer(body, isScrollEvents, storyName){
         if(storyName === "home") content += getHomeSections(body);
         if(storyName === "loyalty") content += getLoyaltySections(body);
     content += '</div>';
-    if(storyName === "home")
-    addScrollEvents();
+    if(storyName === "home"){
+        addScrollEvents();
+    }else{
+        addScrollEventsForStickyNav();
+    }
     return content;
 }
 
@@ -34,6 +37,8 @@ function getLoyaltySections(body){
     content += getSectionWithoutLabels(body[4], false);
     content += getSectionWithoutLabels(body[5], false);
     content += getSectionWithoutLabels(body[6], false);
+    content += getTabsContainer(body[7]);
+    content += getSectionWithoutLabels(body[8], false);
     return content;
 }
 
@@ -215,5 +220,15 @@ function addScrollEvents(){
         verticalTypoParams.map(function(param, index){
             setVerticalTypoSpeed(param.startPos, param.endPos, param.typoNum, param.speed);
         })
+    })
+}
+
+function addScrollEventsForStickyNav(){
+    document.addEventListener("scroll", function(e){
+        if(window.scrollY > 820){
+            document.getElementById("sticky-header-nav").style.transform = "translateY(0px)";
+        }else{
+            document.getElementById("sticky-header-nav").style.transform = "translateY(-90px)";
+        }
     })
 }
