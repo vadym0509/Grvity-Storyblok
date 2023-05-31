@@ -4,9 +4,9 @@ function getHeaderNav(block){
                             <img src=${block.type === "default" ? block.white_logo.filename : block.black_logo.filename} alt="logo" class="object-none">\
                         </a>\
                         <div class="flex">\
-                            <div class="flex justify-between my-auto ${block.type === "default" ? "text-white" : "py-2 px-6 text-[#323B4B] rounded-full bg-[#EBECF0]"}">`
+                            <div class="hidden lg:flex justify-between my-auto ${block.type === "default" ? "text-white" : "py-2 px-6 text-[#323B4B] rounded-full bg-[#EBECF0]"}">`
     block.nav_items.map(function(item, index){
-        content += `<div id="menu-item-${index}" class="hidden cursor-pointer lg:flex mx-3 font-semibold ${block.type === "default" ? "hover:text-gray-200" : "hover:text-gray-400"}">${item.label}</div>`
+        content += `<div id="menu-item-${index}" class="cursor-pointer mx-3 font-semibold ${block.type === "default" ? "hover:text-gray-200" : "hover:text-gray-400"}">${item.label}</div>`
     })
                 content += `</div>\
                             <button class="hidden cursor-pointer lg:block px-6 py-2 ml-14 font-bold text-white rounded-full ${block.type === "default" ? "bg-white bg-opacity-20 hover:bg-opacity-30" : "bg-[#5B7FFF] hover:bg-opacity-80"}">\

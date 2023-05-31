@@ -15,13 +15,14 @@
   <script src="../../components/footer/footer.js"></script>
   <script src="../../components/mobile-navigation/mobile-navigation.js"></script>
   <script src="../../components/utils/addEventListeners.js"></script>
+  <script src="../../components/banner/banner.js"></script>
   <script>
     function getHtmlContent(body){
       var htmlContent = '<div class="flex justify-center">';
         htmlContent += getSectionContainer(body, false, "loyalty")
         htmlContent += '</div>';
-        // htmlContent += getFooter(body[8]);
-        // htmlContent += getMobileNavigation(body[9]);
+        htmlContent += getFooter(body[2]);
+        htmlContent += getMobileNavigation(body[1]);
       return htmlContent
     }
 

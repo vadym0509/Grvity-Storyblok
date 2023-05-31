@@ -18,3 +18,15 @@ function getSection(block, isShowShadow, indicatorNum){
                     </div>`;           
     return content;
 }
+
+function getSectionWithoutLabels(block, isShowShadow){
+    var content = `<div class="mt-24 ${block.full_width === 'boxed' ? 'md:inline-flex' : ''} ">\
+                        <div class="w-full my-auto bg-white ${block.full_width === 'boxed' ? 'lg:max-w-[500px]' : 'lg:max-w-[692px]'}  mr-8">
+                            <div class="font-bold text-[38px] leading-tight text-[#2B2B2B]">${block.blocks[0].headline}</div>
+                            <div class="mt-6 text-lg leading-7 text-[#797979]">${block.blocks[1].text.content[0].content[0].text}</div>`
+                            
+                content += `</div>
+                        ${block.cover.filename ? `<div class="${block.full_width === 'boxed' ? 'mt-6 md:my-auto' : 'mt-6'} bg-white"><img class="${isShowShadow ? 'drop-shadow-xl' : 'w-full'}" src=${block.cover.filename} alt=${block.cover.alt}></div>` : ``}
+                    </div>`;           
+    return content;
+}
