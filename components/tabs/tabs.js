@@ -6,7 +6,7 @@ function getTabsContainer(block){
     })
         content += `</div>`;
     block.blocks.map(function(block, index){
-        content += `<div class="tab-content mt-4 w-full ${block.is_active ? "block" : "hidden"} my-6 w-1/2 flex justify-between">`
+        content += `<div class="tab-content tab={${index}} mt-4 w-full ${block.is_active ? "block" : "hidden"} my-6 w-1/2 flex justify-between">`
         content += getTabContents(block.content);
         content += `</div>`
     })
@@ -17,6 +17,7 @@ function getTabsContainer(block){
 
 function handleTabOnclick(event){
     var tabs = document.querySelectorAll(".tabs");
+    var tabContents = document.querySelectorAll(".tab-content");
     var val = event.target.getAttribute("tab");
     if(val != null){
         tabs.forEach((each, key) => {
@@ -27,7 +28,15 @@ function handleTabOnclick(event){
                 each.classList.add("bg-[#F9F9F9]", "text-[#323B4B]");
             }
         })
-        tabs[val].classList.add("text-white", "bg-[#5B7FFF]")
+        tabs[val].classList.add("text-white", "bg-[#5B7FFF]");
+        tabContents.forEach((each, key) => {
+            each.classList.remove("hidden", "block");
+            if(key !== val){
+                each.classList.add("hidden");
+            }
+        })
+        tabContents[val].classList.remove("hidden");
+        tabContents[val].classList.add("block");
     }
 }
 
@@ -43,6 +52,5 @@ function getTabContents(block){
                     </div>`
     })
     content += `</div>`;
-    console.log(content)
     return content;
 }
