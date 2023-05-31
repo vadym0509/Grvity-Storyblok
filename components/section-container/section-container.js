@@ -207,6 +207,7 @@ function addScrollEvents(){
     }
     handleWindowResize();
     document.addEventListener("scroll", function(e){
+        console.log(window.scrollY)
         if(window.scrollY > 820){
             document.getElementById("sticky-header-nav").style.transform = "translateY(0px)";
         }else{
