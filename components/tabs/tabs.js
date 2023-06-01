@@ -44,7 +44,7 @@ function getTabContents(block){
     var content = `<div class="w-full flex flex-wrap">`;
     block.map(function(item, index){
         content += `<div class="w-full lg:w-1/2 mt-12 inline-flex">
-                        <div class="w-[131px] lg:w-1/4 mr-12 h-[131px] p-[40px] bg-[#5B7FFF] rounded-[23px]"><img class="object-cover" src="${item.icon.filename}"></div>
+                        <div class="w-[8.125rem] lg:w-1/4 mr-12 h-[8.125rem] p-[2.5rem] bg-[#5B7FFF] rounded-[23px]"><img class="object-cover" src="${item.icon.filename}"></div>
                         <div class="my-auto w-3/4">
                             <div class="font-bold text-[1.625rem] text-[#323B4B]">${item.title}</div>
                             <div class="mt-4 text-lg leading-7 text-[#323B4B]">${item.description}</div>

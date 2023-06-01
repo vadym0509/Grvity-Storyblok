@@ -1,7 +1,7 @@
 function getMobileNavigation(body) {
-    var content = `<div id="mobile-nav" class="absolute hidden lg:hidden top-4 right-5 p-4 w-[328px] drop-shadow-2xl rounded-[10px] bg-white z-[1]">
+    var content = `<div id="mobile-nav" class="absolute hidden lg:hidden top-4 right-5 p-4 w-[20.5rem] drop-shadow-2xl rounded-[10px] bg-white z-[1]">
                         <div class="flex justify-between w-full py-3">
-                            <a href="../home/home.html" class="cursor-pointer w-[165px] h-4"><img src="${body.logo.filename}" alt="${body.logo.alt}"></a>
+                            <a href="../home/home.html" class="cursor-pointer w-[10.31rem] h-4"><img src="${body.logo.filename}" alt="${body.logo.alt}"></a>
                             <button onclick="handleMobileNavBtnClick()" class="w-4 h-4"><img src="${body.close_icon.filename}" alt="${body.close_icon.alt}"></button>
                         </div>
                         <div class="flex flex-col mt-4">`;
