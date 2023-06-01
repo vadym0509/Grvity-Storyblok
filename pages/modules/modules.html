@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../../components/hero-section/hero-section.js"></script>
+  <script src="../../components/button/button.js"></script>
+  <script src="../../components/header-nav/header-nav.js"></script>
+  <script src="../../components/section-with-screenshot/section-with-screenshot.js"></script>
+  <script src="../../components/section/section.js"></script>
+  <script src="../../components/section-container/section-container.js"></script>
+  <script src="../../components/label/getLabel.js"></script>
+  <script src="../../components/utils/parallex-effect.js"></script>
+  <script src="../../components/footer/footer.js"></script>
+  <script src="../../components/mobile-navigation/mobile-navigation.js"></script>
+  <script src="../../components/utils/addEventListeners.js"></script>
+  <script src="../../components/banner/banner.js"></script>
+  <script src="../../components/tabs/tabs.js"></script>
+  <script>
+    function getHtmlContent(body){
+      var htmlContent = '<div class="flex justify-center">';
+        htmlContent += getSectionContainer(body, false, "modules")
+        htmlContent += '</div>';
+        htmlContent += getFooter(body[2]);
+        htmlContent += getMobileNavigation(body[1]);
+      return htmlContent
+    }
+
+    function render() {
+      // Replace this with the path to your content item in Storyblok
+      const path = 'modules';
+  
+      fetch(`https://api.storyblok.com/v2/cdn/stories/${path}?version=published&token=dfrcx5heCI97qlA3HM0X9gtt`)
+        .then(response => response.json())
+        .then(data => {
+          const body = data.story.content.body;
+          const htmlContent = getHtmlContent(body);
+          document.getElementById("root").innerHTML = htmlContent;
+        })
+        .then(() => {
+          addEventListeners();
+        });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      render();
+    });
+  </script>
+</head>
+<body class="font-['Segoe UI']">
+  <div id="root"></div>  
+</body>
+</html>

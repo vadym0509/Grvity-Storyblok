@@ -2,6 +2,7 @@ function getSectionContainer(body, isScrollEvents, storyName){
     var content = '<div id="section-container" class="w-full mx-8 md:w-[719px] lg:w-[960px] xl:w-[1048px]">';
         if(storyName === "home") content += getHomeSections(body);
         if(storyName === "loyalty") content += getLoyaltySections(body);
+        if(storyName === "modules") content += getModulesSections(body);
     content += '</div>';
     if(storyName === "home"){
         addScrollEvents();
@@ -40,6 +41,23 @@ function getLoyaltySections(body){
     content += getSectionWithoutLabels(body[6], false);
     content += getTabsContainer(body[7]);
     content += getSectionWithoutLabels(body[8], false);
+    return content;
+}
+
+function getModulesSections(body){
+    var content = `<div class="absolute overflow-hidden inset-0 z-[-1]">\
+                        <div class="absolute h-[60rem] bg-no-repeat w-screen bg-[url('${body[3].background_image_1.filename}')]"></div>
+                        <div class="absolute h-[60rem] bg-no-repeat w-screen bg-[url('${body[3].background_image_2.filename}')]"></div>
+                    </div>`;
+    content += getHeaderNav(body[0]);
+    content += getStickyHeaderNav(body[0]);
+    content += getDesktopMenuContent(body[1].items[0]);
+    content += getBanner(body[3])
+    // content += getSectionWithoutLabels(body[4], true);
+    // content += getSectionWithoutLabels(body[5], false);
+    // content += getSectionWithoutLabels(body[6], false);
+    // content += getTabsContainer(body[7]);
+    // content += getSectionWithoutLabels(body[8], false);
     return content;
 }
 

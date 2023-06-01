@@ -6,7 +6,7 @@ function getHeaderNav(block){
                         <div class="flex">\
                             <div class="hidden lg:flex justify-between my-auto ${block.type === "default" ? "text-white" : "py-2 px-6 text-[#323B4B] rounded-full bg-[#EBECF0]"}">`
     block.nav_items.map(function(item, index){
-        content += `<div id="menu-item-${index}" class="cursor-pointer mx-3 font-semibold ${block.type === "default" ? "hover:text-gray-200" : "hover:text-gray-400"}">${item.label}</div>`
+        content += `<a ${item.url ? `href="${item.url.url}"` : ""} id="menu-item-${index}" class="cursor-pointer mx-3 font-semibold ${block.type === "default" ? "hover:text-gray-200" : "hover:text-gray-400"}">${item.label}</a>`
     })
                 content += `</div>\
                             <button class="hidden cursor-pointer lg:block px-6 py-2 ml-14 font-bold text-white rounded-full ${block.type === "default" ? "bg-white bg-opacity-20 hover:bg-opacity-30" : "bg-[#5B7FFF] hover:bg-opacity-80"}">\
@@ -29,7 +29,7 @@ function getStickyHeaderNav(block){
                         <div class="flex">\
                             <div class="flex justify-between my-auto text-[#323B4B]">`
     block.nav_items.map(function(item, index){
-        content += `<div id="sticky-menu-item-${index}" class="hidden cursor-pointer lg:flex mx-3 font-semibold hover:text-dark-200">${item.label}</div>`
+        content += `<a ${item.url ? `href="${item.url.url}"` : ""} id="sticky-menu-item-${index}" class="hidden cursor-pointer lg:flex mx-3 font-semibold hover:text-dark-200">${item.label}</a>`
     })
                 content += `</div>\
                             <button class="hidden cursor-pointer lg:block px-6 py-2 ml-14 font-bold text-white rounded-full bg-[#5B7FFF] hover:bg-opacity-80">\
