@@ -1,5 +1,5 @@
 function getCard(block){
-    var content = `<div class="mt-12 w-full py-[1rem] px-6 rounded-[20px] bg-white" style="box-shadow: 4px 4px 40px rgba(138, 148, 166, 0.25);">
+    var content = `<div class="mt-12 w-full py-6 px-6 rounded-[20px] bg-white drop-shadow-card">
                         <div class="sm:inline-flex">
                             <div class="mr-6 font-bold text-[1.625rem] text-[#323B4B]">${block.title}</div>
                             <div class="mt-2 sm:m-auto w-fit">`

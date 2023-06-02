@@ -15,7 +15,7 @@ function getSection(block, isShowShadow, indicatorNum){
     content += getButton(block.blocks[3]);
                 content += `</div>
                         </div>
-                        ${block.cover.length > 0 ? `<div class="${block.full_width === 'boxed' ? 'mt-6 md:my-auto' : 'mt-6'} bg-white"><img class="${isShowShadow ? 'drop-shadow-xl' : 'w-full'}" src=${block.cover[0].filename} alt=${block.cover[0].alt}></div>` : ``}
+                        ${block.cover.length > 0 ? `<div class="${block.full_width === 'boxed' ? 'mt-6 md:my-auto' : 'mt-6'} bg-white"><img class="${isShowShadow ? 'drop-shadow-default' : 'w-full'}" src=${block.cover[0].filename} alt=${block.cover[0].alt}></div>` : ``}
                     </div>`;           
     return content;
 }
@@ -27,7 +27,7 @@ function getSectionWithoutLabels(block, isShowShadow){
                             <div class="mt-6 text-lg leading-7 text-[#797979]">${block.blocks[1].text.content[0].content[0].text}</div>`
                             
                 content += `</div>
-                        ${block.cover.length > 0 ? `<div class="${block.full_width === 'boxed' ? 'mt-6 md:my-auto' : 'mt-6'}"><img class="${isShowShadow ? 'drop-shadow-xl' : 'w-full'}" src=${block.cover[0].filename} alt=${block.cover[0].alt}></div>` : ``}
+                        ${block.cover.length > 0 ? `<div class="${block.full_width === 'boxed' ? 'mt-6 md:my-auto' : 'mt-6'}"><img class="${isShowShadow ? 'drop-shadow-default' : 'w-full'}" src=${block.cover[0].filename} alt=${block.cover[0].alt}></div>` : ``}
                     </div>`;           
     return content;
 }
