@@ -4,7 +4,7 @@ function getFooter(body){
                             <div class="sm:inline-flex w-full">
                                 <a href="../home/home.html" class="mr-0 sm:mr-10 md:mr-16 lg:mr-24 w-full sm:w-[126px] md:w-[158px] lg:w-auto">
                                     <img class="mt-3" src="${body.footer_logo.filename}" alt="${body.footer_logo.alt}">
-                                    <div class="sm:hidden block text-base text-[#797979] mt-4 mb-6">${new Date().getFullYear()}&nbsp;&copy;&nbsp;GRVITY</div>
+                                    <div class="block sm:hidden text-base text-[#797979] mt-4 mb-6">${new Date().getFullYear()}&nbsp;&copy;&nbsp;GRVITY</div>
                                 </a>
                                 <div class="inline-flex w-full sm:w-3/4">
                                     <div class="w-1/2 sm:w-1/3 mr-14 sm:mr-0">`

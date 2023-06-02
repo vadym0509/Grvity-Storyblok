@@ -1,8 +1,6 @@
 function getSectionContainer(body, isScrollEvents, storyName){
     var content = '<div id="section-container" class="w-full mx-8 md:w-[45rem] lg:w-[60rem] xl:w-[65.5rem]">';
-        if(storyName === "home") content += getHomeSections(body);
-        if(storyName === "loyalty") content += getLoyaltySections(body);
-        if(storyName === "modules") content += getModulesSections(body);
+    content += getSections(storyName, body)
     content += '</div>';
     if(storyName === "home"){
         addScrollEvents();
@@ -12,52 +10,19 @@ function getSectionContainer(body, isScrollEvents, storyName){
     return content;
 }
 
-function getHomeSections(body){
-    var content = '';
-    content += getHeaderNav(body[0]);
-    content += getStickyHeaderNav(body[0]);
-    content += getDesktopMenuContent(body[1].items[0]);
-    content += getHeroSection(body[3]);
-    content += getSection(body[4], true, "01");
-    content += getSection(body[5], true, "02");
-    content += getSection(body[6], false, "03");
-    content += getSection(body[7], false, "04");
-    content += getSection(body[8], false, "05");
-    content += getSection(body[9], false, "06");
-    return content;
-}
-
-function getLoyaltySections(body){
-    var content = `<div class="absolute overflow-hidden inset-0 z-[-1]">
-                        <div class="absolute h-[60rem] bg-no-repeat w-screen bg-[url('${body[3].background_image_1.filename}')]"></div>
-                        <div class="absolute h-[60rem] bg-no-repeat w-screen bg-[url('${body[3].background_image_2.filename}')]"></div>
-                    </div>`;
-    content += getHeaderNav(body[0]);
-    content += getStickyHeaderNav(body[0]);
-    content += getDesktopMenuContent(body[1].items[0]);
-    content += getBanner(body[3])
-    content += getSectionWithoutLabels(body[4], true);
-    content += getSectionWithoutLabels(body[5], false);
-    content += getSectionWithoutLabels(body[6], false);
-    content += getTabsContainer(body[7]);
-    content += getSectionWithoutLabels(body[8], false);
-    return content;
-}
-
-function getModulesSections(body){
-    var content = `<div class="absolute overflow-hidden inset-0 z-[-1]">
-                        <div class="absolute h-[60rem] bg-no-repeat w-screen bg-[url('${body[3].background_image_1.filename}')]"></div>
-                    </div>`;
-    content += getHeaderNav(body[0]);
-    content += getStickyHeaderNav(body[0]);
-    content += getDesktopMenuContent(body[1].items[0]);
-    content += getBanner(body[3]);
-    content += `<div class="mt-24">`
-    content += getCard(body[4]);
-    content += `</div>`;
-    content += getCard(body[5]);
-    content += getCard(body[6]);
-    return content;
+function getSections(storyName, body){
+    switch (storyName) {
+        case "home":
+            return getHomeSections(body);
+        case "loyalty":
+            return getLoyaltySections(body);
+        case "modules":
+            return getModulesSections(body);
+        case "contact":
+            return getContactSections(body);
+        default:
+            break;
+    }
 }
 
 function addScrollEvents(){

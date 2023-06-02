@@ -14,12 +14,11 @@
   <script src="../../components/mobile-navigation/mobile-navigation.js"></script>
   <script src="../../components/utils/addEventListeners.js"></script>
   <script src="../../components/banner/banner.js"></script>
-  <script src="../../components/tabs/tabs.js"></script>
-  <script src="loyalty.js"></script>
+  <script src="contact.js"></script>
   <script>
     function getHtmlContent(body){
       var htmlContent = '<div class="flex justify-center">';
-        htmlContent += getSectionContainer(body, false, "loyalty")
+        htmlContent += getSectionContainer(body, false, "contact")
         htmlContent += '</div>';
         htmlContent += getFooter(body[2]);
         htmlContent += getMobileNavigation(body[1]);
@@ -28,7 +27,7 @@
 
     function render() {
       // Replace this with the path to your content item in Storyblok
-      const path = 'loyalty';
+      const path = 'contact';
   
       fetch(`https://api.storyblok.com/v2/cdn/stories/${path}?version=published&token=dfrcx5heCI97qlA3HM0X9gtt`)
         .then(response => response.json())
