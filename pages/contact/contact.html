@@ -15,6 +15,8 @@
   <script src="../../components/utils/addEventListeners.js"></script>
   <script src="../../components/banner/banner.js"></script>
   <script src="../../components/input/input.js"></script>
+  <script src="../../components/input/customSelect.js"></script>
+  <link rel="stylesheet" href="../../components/input/cutomSelect.css">
   <script src="contact.js"></script>
   <script>
     function getHtmlContent(body){
@@ -39,6 +41,7 @@
         })
         .then(() => {
           addEventListeners();
+          addCustomSelectBox();
         });
     }
 
