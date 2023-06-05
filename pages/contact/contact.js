@@ -11,7 +11,7 @@ function getContactSections(body){
 
 function getContactUsSection(block){
     var content =  `<div class="md:inline-flex mt-24">
-                        <div class="w-full md:w-1/2 text-[#323B4B] mr-2">
+                        <div class="w-full md:w-1/2 text-midnight-blue mr-2">
                             <div class="font-bold text-[2.375rem]">${block.blocks[0].headline}</div>
                             <div class="text-lg mt-6 md:mr-2">${block.blocks[1].text.content[0].content[0].text}</div>
                             <div class="mt-[38px] w-full inline-flex justify-between">`
@@ -30,8 +30,8 @@ function getContactInfoContainer(block){
     var content =  `<div class="w-1/2 inline-flex">
                         <div class="mt-2 mr-4"><img src="${block.icon.filename}"></div>
                         <div>
-                            <div class="font-semibold text-lg text-[#323B4B]">${block.title}</div>
-                            <div class="mt-[18px] text-[#4E5D78]">${block.description}</div>
+                            <div class="font-semibold text-lg text-midnight-blue">${block.title}</div>
+                            <div class="mt-[18px] text-steel-blue">${block.description}</div>
                         </div>
                     </div>`;
     return content;

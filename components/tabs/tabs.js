@@ -2,7 +2,7 @@ function getTabsContainer(block){
     var content = `<div class="mt-24 w-full">
                     <div class="inline-flex justify-start gap-x-7">`;
     block.blocks.map(function(block, index){
-        content += `<button onclick="handleTabOnclick(event)" tab="${index}" class="tabs h-24 lg:py-8 px-4 sm:px-16 font-bold text-[1.625rem] leading-[2.25rem] rounded-full ${block.is_active ? "text-white bg-[#5B7FFF]" : "bg-[#F9F9F9] text-[#323B4B]"}">${block.heading}</button>`;
+        content += `<button onclick="handleTabOnclick(event)" tab="${index}" class="tabs h-24 lg:py-8 px-4 sm:px-16 font-bold text-[1.625rem] leading-[2.25rem] rounded-full ${block.is_active ? "text-white bg-blue-primary" : "bg-[#F9F9F9] text-midnight-blue"}">${block.heading}</button>`;
     })
         content += `</div>`;
     block.blocks.map(function(block, index){
@@ -21,14 +21,14 @@ function handleTabOnclick(event){
     var val = event.target.getAttribute("tab");
     if(val != null){
         tabs.forEach((each, key) => {
-            each.classList.remove("text-white", "bg-[#5B7FFF]");
+            each.classList.remove("text-white", "bg-blue-primary");
             if(key == val){
-                each.classList.remove("bg-[#F9F9F9]", "text-[#323B4B]");
+                each.classList.remove("bg-[#F9F9F9]", "text-midnight-blue");
             }else{
-                each.classList.add("bg-[#F9F9F9]", "text-[#323B4B]");
+                each.classList.add("bg-[#F9F9F9]", "text-midnight-blue");
             }
         })
-        tabs[val].classList.add("text-white", "bg-[#5B7FFF]");
+        tabs[val].classList.add("text-white", "bg-blue-primary");
         tabContents.forEach((each, key) => {
             each.classList.remove("hidden", "block");
             if(key !== val){
@@ -44,10 +44,10 @@ function getTabContents(block){
     var content = `<div class="w-full flex flex-wrap">`;
     block.map(function(item, index){
         content += `<div class="w-full lg:w-1/2 mt-12 inline-flex">
-                        <div class="w-[8.125rem] lg:w-1/4 mr-12 h-[8.125rem] p-[2.5rem] bg-[#5B7FFF] rounded-[23px]"><img class="object-cover" src="${item.icon.filename}"></div>
+                        <div class="w-[8.125rem] lg:w-1/4 mr-12 h-[8.125rem] p-[2.5rem] bg-blue-primary rounded-[23px]"><img class="object-cover" src="${item.icon.filename}"></div>
                         <div class="my-auto w-3/4">
-                            <div class="font-bold text-[1.625rem] text-[#323B4B]">${item.title}</div>
-                            <div class="mt-4 text-lg leading-7 text-[#323B4B]">${item.description}</div>
+                            <div class="font-bold text-[1.625rem] text-midnight-blue">${item.title}</div>
+                            <div class="mt-4 text-lg leading-7 text-midnight-blue">${item.description}</div>
                         </div>
                     </div>`
     })

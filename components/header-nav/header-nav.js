@@ -4,15 +4,15 @@ function getHeaderNav(block){
                             <img src=${block.type === "default" ? block.white_logo.filename : block.black_logo.filename} alt="logo" class="object-none">
                         </a>
                         <div class="flex">
-                            <div class="hidden lg:flex justify-between my-auto ${block.type === "default" ? "text-white" : "py-2 px-6 text-[#323B4B] rounded-full bg-[#EBECF0]"}">`
+                            <div class="hidden lg:flex justify-between my-auto ${block.type === "default" ? "text-white" : "py-2 px-6 text-midnight-blue rounded-full bg-[#EBECF0]"}">`
     block.nav_items.map(function(item, index){
         content += `<a ${item.url ? `href="${item.url.url}"` : ""} id="menu-item-${index}" class="cursor-pointer mx-3 font-semibold ${block.type === "default" ? "hover:text-gray-200" : "hover:text-gray-400"}">${item.label}</a>`
     })
                 content += `</div>
-                            <button class="hidden cursor-pointer lg:block px-6 py-2 ml-14 font-bold text-white rounded-full ${block.type === "default" ? "bg-white bg-opacity-20 hover:bg-opacity-30" : "bg-[#5B7FFF] hover:bg-opacity-80"}">
+                            <button class="hidden cursor-pointer lg:block px-6 py-2 ml-14 font-bold text-white rounded-full ${block.type === "default" ? "bg-white bg-opacity-20 hover:bg-opacity-30" : "bg-blue-primary hover:bg-opacity-80"}">
                                 ${block.book_demo_btn[0].label}
                             </button>
-                            <button onclick="handleMobileNavBtnClick()" class="lg:hidden cursor-pointer px-6 py-2 rounded-full ${block.type === "default" ? "bg-white bg-opacity-20 hover:bg-opacity-30" : "bg-[#5B7FFF] hover:bg-opacity-80"}">
+                            <button onclick="handleMobileNavBtnClick()" class="lg:hidden cursor-pointer px-6 py-2 rounded-full ${block.type === "default" ? "bg-white bg-opacity-20 hover:bg-opacity-30" : "bg-blue-primary hover:bg-opacity-80"}">
                                 <img src=${block.menu_btn_mobile[0].icon.filename} alt=${block.menu_btn_mobile[0].icon.alt}>
                             </button>
                         </div>
@@ -27,15 +27,15 @@ function getStickyHeaderNav(block){
                             <img src=${block.black_logo.filename} alt="logo" class="object-none">
                         </a>
                         <div class="flex">
-                            <div class="flex justify-between my-auto text-[#323B4B]">`
+                            <div class="flex justify-between my-auto text-midnight-blue">`
     block.nav_items.map(function(item, index){
         content += `<a ${item.url ? `href="${item.url.url}"` : ""} id="sticky-menu-item-${index}" class="hidden cursor-pointer lg:flex mx-3 font-semibold hover:text-dark-200">${item.label}</a>`
     })
                 content += `</div>
-                            <button class="hidden cursor-pointer lg:block px-6 py-2 ml-14 font-bold text-white rounded-full bg-[#5B7FFF] hover:bg-opacity-80">
+                            <button class="hidden cursor-pointer lg:block px-6 py-2 ml-14 font-bold text-white rounded-full bg-blue-primary hover:bg-opacity-80">
                                 ${block.book_demo_btn[0].label}
                             </button>
-                            <button onclick="handleStickyMobileNavBtnClick()" class="lg:hidden cursor-pointer px-6 py-2 rounded-full bg-[#5B7FFF] hover:bg-opacity-80">
+                            <button onclick="handleStickyMobileNavBtnClick()" class="lg:hidden cursor-pointer px-6 py-2 rounded-full bg-blue-primary hover:bg-opacity-80">
                                 <img src=${block.menu_btn_mobile[0].icon.filename} alt=${block.menu_btn_mobile[0].icon.alt}>
                             </button>
                         </div>
@@ -51,8 +51,8 @@ function getDesktopMenuContent(block){
                         <div class="flex flex-wrap">`
     block.links.map(function(link, index){
         content += `<div class="w-1/2 py-4 px-2">
-                        <a href="${link.link.url}" class="font-semibold text-[#323B4B] cursor-pointer">${link.text}</a>
-                        <div class="text-sm text-[#8A94A6]">${link.description}</div>
+                        <a href="${link.link.url}" class="font-semibold text-midnight-blue cursor-pointer">${link.text}</a>
+                        <div class="text-sm text-gray">${link.description}</div>
                     </div>`;
     })
         content +=    `</div>

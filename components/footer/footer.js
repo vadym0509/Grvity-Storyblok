@@ -1,5 +1,5 @@
 function getFooter(body){
-    var content = `<div id="footer-container" class="w-full flex mt-24 sm:mt-18 justify-center bg-[#F6F9FC]">
+    var content = `<div id="footer-container" class="w-full flex mt-24 sm:mt-18 justify-center bg-pale-blue">
                         <div class="my-24 mx-8 w-full md:w-[45rem] lg:w-[60rem] xl:w-[65.5rem]">
                             <div class="sm:inline-flex w-full">
                                 <div class="mr-0 sm:mr-10 md:mr-16 lg:mr-24 w-full sm:w-[126px] md:w-[158px] lg:w-auto">
@@ -25,9 +25,9 @@ function getFooter(body){
 }
 
 function getFooterItems(block, width){
-    var content = `<div class="${width}"><ul><li class="font-semibold text-2xl text-[#323B4B] mb-4 sm:mb-9">${block.title}</li>`
+    var content = `<div class="${width}"><ul><li class="font-semibold text-2xl text-midnight-blue mb-4 sm:mb-9">${block.title}</li>`
     block.items.map(function(item, index){
-        content += `<li class="text-[#4E5D78] text-lg leading-[28px] hover:underline"><a href="${item.link.url}">${item.text}</a></li>`
+        content += `<li class="text-steel-blue text-lg leading-[28px] hover:underline"><a href="${item.link.url}">${item.text}</a></li>`
     })
     content += '</ul></div>'
     return content;
