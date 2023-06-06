@@ -15,7 +15,7 @@ function getSection(block, isShowShadow, indicatorNum){
     content += getButton(block.blocks[3]);
                 content += `</div>
                         </div>
-                        ${block.cover.length > 0 ? `<div class="${block.full_width === 'boxed' ? 'mt-6 md:my-auto' : 'mt-6'} bg-white"><img class="${isShowShadow ? 'drop-shadow-default' : 'w-full'}" src=${block.cover[0].filename} alt=${block.cover[0].alt}></div>` : ``}
+                        ${block.cover.length > 0 ? `<div class="${block.full_width === 'boxed' ? 'mt-6 md:my-auto' : 'mt-6'} relative z-[2]"><img class="${isShowShadow ? 'drop-shadow-default' : 'w-full'}" src=${block.cover[0].filename} alt=${block.cover[0].alt}></div>` : ``}
                     </div>`;           
     return content;
 }

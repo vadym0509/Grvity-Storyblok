@@ -21,7 +21,7 @@ function getHeaderNav(block){
 }
 
 function getStickyHeaderNav(block){
-    var content = `<div id="sticky-header-nav" class="fixed transition ease-in-out duration-500 -translate-y-[90px] left-0 z-[1] top-0 flex justify-center bg-white w-full drop-shadow-xl h--xl">
+    var content = `<div id="sticky-header-nav" class="fixed transition ease-in-out duration-500 -translate-y-[90px] left-0 z-[3] top-0 flex justify-center bg-white w-full drop-shadow-xl h--xl">
     <div class="flex py-[14px] justify-between mx-8 md:mx-0 w-full md:w-[45rem] lg:w-[60rem] xl:w-[65.5rem]">
                         <a href="../home/home.html" class="my-auto cursor-pointer">
                             <img src=${block.black_logo.filename} alt="logo" class="object-none">
